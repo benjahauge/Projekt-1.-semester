@@ -1,0 +1,32 @@
+﻿@page
+@model Projekt.Pages.KursusX.OpretKursusModel
+@{
+            ViewData["Title"] = "OpretKursus";
+}
+<form method="post">
+	<h3>Indsæt informationer</h3>
+	<div class="form-group">
+		<label>Navn:</label><input asp-for="@Model.Kursus.Navn" class="form-control" />
+		<span asp-validation-for="Kursus.Navn" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label>Beskrivelse:</label><input asp-for="@Model.Kursus.Beskrivelse" class="form-control" />
+		<span asp-validation-for="Kursus.Beskrivelse" class="text-danger"></span>
+	</div>
+
+	<div class="form-group">
+		<label>Lokale:</label><input asp-for="@Model.Kursus.Lokale" class="form-control" />
+		<span asp-validation-for="Kursus.Lokale" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label>Underviser:</label><input asp-for="@Model.Kursus.Underviser" class="form-control" />
+		<span asp-validation-for="Kursus.Underviser" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label>Dato og tid:</label><input asp-for="@Model.Kursus.DateTime" class="form-control" />
+		<span asp-validation-for="Kursus.DateTime" class="text-danger"></span>
+	</div>
+	<div class="text-center">
+		<input class="btn btn-primary" type="submit" value="Opret Kursus" />
+	</div>
+</form>

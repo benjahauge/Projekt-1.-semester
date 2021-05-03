@@ -1,0 +1,16 @@
+[
+  {
+    "ID": 1,
+    "Navn": "mit navn det står med prikker",
+    "Email": "mitnavndetstårmedprikker@fiskens.dk",
+    "PassWord": "Prikmin",
+    "UserType": "Admin"
+  },
+  {
+    "ID": 2,
+    "Navn": "Henrik",
+    "Email": "henrik@henrik.dk",
+    "PassWord": "piqweqjk",
+    "UserType": null
+  }
+]

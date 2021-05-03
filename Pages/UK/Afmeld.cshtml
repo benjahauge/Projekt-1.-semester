@@ -1,0 +1,45 @@
+﻿@page
+@model Projekt.Pages.UK.AfmeldModel
+@{
+	ViewData["Title"] = "Afmeld";
+}
+
+<h1>Er du sikker på du vil afmeldes dette kursus?</h1>
+
+<div>
+	<form method="post">
+		<dl class="row">
+			<dt class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Kursus.Navn)
+			</dt>
+			<dd class="col-sm-10">
+				@Html.DisplayFor(model => model.Kursus.Navn)
+			</dd>
+			<dt class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Kursus.Beskrivelse)
+			</dt>
+			<dd class="col-sm-10">
+				@Html.DisplayFor(model => model.Kursus.Beskrivelse)
+			</dd>
+			<dt class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Kursus.Underviser)
+			</dt>
+			<dd class="col-sm-10">
+				@Html.DisplayFor(model => model.Kursus.Underviser)
+			</dd>
+			<dt class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Kursus.Lokale)
+			</dt>
+			<dd class="col-sm-10">
+				@Html.DisplayFor(model => model.Kursus.Lokale)
+			</dd>
+			<dt class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Kursus.DateTime)
+			</dt>
+			<dd class="col-sm-10">
+				@Html.DisplayFor(model => model.Kursus.DateTime)
+			</dd>
+		</dl>
+	</form>
+		<a asp-page="index">Afmeld</a>
+</div>

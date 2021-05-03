@@ -1,0 +1,31 @@
+﻿@page
+@model Projekt.Pages.Users.OpretUserModel
+@{
+            ViewData["Title"] = "OpretUser";
+}
+<form method="post">
+    <h3>Indsæt informationer</h3>
+    <div class="form-group">
+        <label>Navn:</label><input asp-for="@Model.User.Navn" class="form-control" />
+        <span asp-validation-for="User.Navn" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <br />
+        <label>Eksempelvis: Email@Email.dk</label>
+        <input asp-for="@Model.User.Email" class="form-control" />
+        <span asp-validation-for="User.Email" class="text-danger"></span>
+    </div>
+
+	<div class="form-group">
+        <label>Password:</label><input asp-for="@Model.User.PassWord" class="form-control" />
+        <span asp-validation-for="User.PassWord" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>UserType:</label><input asp-for="@Model.User.UserType" class="form-control" />
+        <span asp-validation-for="User.UserType" class="text-danger"></span>
+    </div>
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Opret User" />
+    </div>
+</form>

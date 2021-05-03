@@ -1,0 +1,45 @@
+﻿@page
+@model Projekt.Pages.UK.TilmeldModel
+@{
+	ViewData["Title"] = "Tilmeld";
+}
+
+
+<h1>Du er nu tilmeldt</h1>
+<div>
+	<form method="post">
+		<dl class="row">
+			<dt class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Kursus.Navn)
+			</dt>
+			<dd class="col-sm-10">
+				@Html.DisplayFor(model => model.Kursus.Navn)
+			</dd>
+			<dt class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Kursus.Beskrivelse)
+			</dt>
+			<dd class="col-sm-10">
+				@Html.DisplayFor(model => model.Kursus.Beskrivelse)
+			</dd>
+			<dt class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Kursus.Underviser)
+			</dt>
+			<dd class="col-sm-10">
+				@Html.DisplayFor(model => model.Kursus.Underviser)
+			</dd>
+			<dt class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Kursus.Lokale)
+			</dt>
+			<dd class="col-sm-10">
+				@Html.DisplayFor(model => model.Kursus.Lokale)
+			</dd>
+			<dt class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Kursus.DateTime)
+			</dt>
+			<dd class="col-sm-10">
+				@Html.DisplayFor(model => model.Kursus.DateTime)
+			</dd>
+		</dl>
+	</form>
+		<a asp-page="index">Back to List</a>
+</div>

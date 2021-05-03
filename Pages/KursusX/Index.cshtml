@@ -1,0 +1,102 @@
+﻿@page
+@inject Projekt.Interfaces.IRepository repository
+@model Projekt.Pages.KursusX.IndexModel
+@{
+	ViewData["Title"] = "Kursus";
+}
+
+
+<h1> Admins kursus oversigt </h1>
+<p>
+	<a asp-page="OpretKursus">Opret nyt kursus</a>
+</p>
+
+<div>
+	<ul>
+		<li> Der er @repository.GetAllKursus().Count tilgængelige kursus</li>
+	</ul>
+</div>
+
+<form>
+	<p>
+		Search: <input type="text" asp-for="FilterCriteria" />
+		<input type="submit" value="Filter" />
+	</p>
+</form>
+
+@*@foreach (var k in Model.Kursuss)
+{
+	<div class="container">
+			<div class="row">
+				<div class="col-sm">
+					<div class="card" style="width: 30rem;">
+						<img class="card-img-top" src="~/img/Fjordstjernen.jpg" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">@k.Navn</h5>
+							<p class="card-text">@k.Beskrivelse</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+}*@
+
+<table class="table">
+		<thead>
+			<tr>
+				<th>
+					ID
+				</th>
+				<th>
+					Navn
+				</th>
+				<th>
+					Beskrivelse
+				</th>
+				<th>
+					Lokale
+				</th>
+				<th>
+					Underviser
+				</th>
+				<th>
+					Dato og tid
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var k in Model.Kursuss)
+			{
+			<tr>
+				<td>
+					@k.ID
+				</td>
+				<td>
+					@k.Navn
+				</td>
+				<td>
+					@k.Beskrivelse
+				</td>
+				<td>
+					@k.Lokale
+				</td>
+				<td>
+					@k.Underviser
+				</td>
+				<td>
+					@k.DateTime
+				</td>
+				<td>
+					<p>
+						<a asp-page="EditKursus" asp-route-id="@k.ID">Edit</a> |
+						<a asp-page="DeleteKursus" asp-route-id="@k.ID">Delete</a>
+					</p>
+				</td>
+			</tr>
+			}
+		</tbody>
+	</table>
+
+

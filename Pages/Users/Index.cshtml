@@ -1,0 +1,75 @@
+﻿@page
+@inject Projekt.Interfaces.IUserRepository repository
+@model Projekt.Pages.Users.IndexModel
+@{
+	ViewData["Title"] = "Bruger";
+}
+
+<h1>Admins bruger oversigt</h1>
+<p>
+	<a asp-page="OpretUser">Opret ny user</a>
+</p>
+
+<div>
+		<ul>
+			<li> Der er @repository.GetAllUser().Count tilgængelige kursus</li>
+		</ul>
+</div>
+
+<form>
+	<p>
+		Search: <input type="text" asp-for="FilterCriteria" />
+		<input type="submit" value="Filter" />
+	</p>
+</form>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				ID
+			</th>
+			<th>
+				Navn
+			</th>
+			<th>
+				Email
+			</th>
+			<th>
+				Password
+			</th>
+			<th>
+				UserType
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var u in Model.Userss)
+		{
+			<tr>
+				<td>
+					@u.ID
+				</td>
+				<td>
+					@u.Navn
+				</td>
+				<td>
+					@u.Email
+				</td>
+				<td>
+					@u.PassWord
+				</td>
+				<td>
+					@u.UserType
+				</td>
+				<td>
+					<p>
+						<a asp-page="EditUser" asp-route-id="@u.ID">Edit</a> |
+						<a asp-page="DeleteUser" asp-route-id="@u.ID">Delete</a>
+					</p>
+				</td>
+			</tr>
+
+		}
+	</tbody>
+</table>
